@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="ZenJiCh">
+    
+    <title>
+        
+            《C Primer Plus（第6版）中文版》读书笔记（第2章，2.25~3.17，2023） |
+        
+        ZenJiCh&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/avatar.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066cc","logo":"/images/avatar.png","favicon":"/images/avatar.png","avatar":"/images/avatar.png","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/行星发动机&上海@流浪地球2.png","description":"生存的最大障碍从来不是弱小和无知,而是傲慢。|| The biggest impediment for survival is never weakness and ignorance,but arrogance.","font_color":null,"hitokoto":false},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":true},"lazyload":{"enable":true},"comment":{"enable":true,"use":"valine","valine":{"appid":"avNR4TNcLOPPEAIlLl6ZwGJb-9Nh9j0Va","appkey":"SleATkcLof9VpvMFWASoRyfU","server_urls":null,"placeholder":"若有疑问，请留言。（填写邮箱可在被回复时收到邮件提醒）"},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":false,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":true,"wordcount":true,"min2read":true},"img_align":"left","copyright_info":true},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/avatar.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+               ZenJiCh&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            <div class="article-title">
+                <span class="title-hover-animation">《C Primer Plus（第6版）中文版》读书笔记（第2章，2.25~3.17，2023）</span>
+            </div>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar.png">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">ZenJiCh</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2023-03-17 14:58:52</span>
+        <span class="mobile">2023-03-17 14:58</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2023-03-17 15:04:57</span>
+    </span>
+    
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E3%80%8AC-Primer-Plus%EF%BC%88%E7%AC%AC6%E7%89%88%EF%BC%89%E4%B8%AD%E6%96%87%E7%89%88%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">《C Primer Plus（第6版）中文版》读书笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/C/">C</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>4.4k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>15 分钟</span>
+        </span>
+    
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content keep-markdown-body">
+                
+
+                <h1 id="《C-Primer-Plus（第6版）中文版》读书笔记（第2章，2-25-3-17，2023）"><a href="#《C-Primer-Plus（第6版）中文版》读书笔记（第2章，2-25-3-17，2023）" class="headerlink" title="《C Primer Plus（第6版）中文版》读书笔记（第2章，2.25~3.17，2023）"></a>《C Primer Plus（第6版）中文版》读书笔记（第2章，2.25~3.17，2023）</h1><h2 id="注：以下内容为个人读书学习备忘记录，仅供参考"><a href="#注：以下内容为个人读书学习备忘记录，仅供参考" class="headerlink" title="注：以下内容为个人读书学习备忘记录，仅供参考"></a>注：以下内容为个人读书学习备忘记录，仅供参考</h2><h2 id="建议购买本书或者自行搜索下载浏览本书PDF，进一步学习理解"><a href="#建议购买本书或者自行搜索下载浏览本书PDF，进一步学习理解" class="headerlink" title="建议购买本书或者自行搜索下载浏览本书PDF，进一步学习理解"></a>建议购买本书或者自行搜索下载浏览本书PDF，进一步学习理解</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="解释：因为将博客框架从Gridea迁移到Hexo，花费些许时间，折腾了图床许久，所以第2章的学习时段相对比第1章要长些"><a href="#解释：因为将博客框架从Gridea迁移到Hexo，花费些许时间，折腾了图床许久，所以第2章的学习时段相对比第1章要长些" class="headerlink" title="解释：因为将博客框架从Gridea迁移到Hexo，花费些许时间，折腾了图床许久，所以第2章的学习时段相对比第1章要长些"></a>解释：因为将博客框架从Gridea迁移到Hexo，花费些许时间，折腾了图床许久，所以第2章的学习时段相对比第1章要长些</h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><h2 id="摘录"><a href="#摘录" class="headerlink" title="摘录"></a>摘录</h2><h3 id="第2章-C语言概述"><a href="#第2章-C语言概述" class="headerlink" title="第2章 C语言概述"></a>第2章 C语言概述</h3><h3 id="典型的C程序"><a href="#典型的C程序" class="headerlink" title="典型的C程序"></a>典型的C程序</h3><h3 id="include——预处理器指令"><a href="#include——预处理器指令" class="headerlink" title="#include——预处理器指令"></a><code>#include</code>——预处理器指令</h3><h3 id="int-main-void-——main（）总是第一个被调用的函数——组成函数的语句"><a href="#int-main-void-——main（）总是第一个被调用的函数——组成函数的语句" class="headerlink" title="int main(void)——main（）总是第一个被调用的函数——组成函数的语句"></a><code>int main(void)</code>——main（）总是第一个被调用的函数——组成函数的语句</h3><h3 id="function-a-——语句"><a href="#function-a-——语句" class="headerlink" title="function a()——语句"></a><code>function a()</code>——语句</h3><h3 id="function-b-——语句"><a href="#function-b-——语句" class="headerlink" title="function b()——语句"></a><code>function b()</code>——语句</h3><h3 id="函数是C程序的构造块"><a href="#函数是C程序的构造块" class="headerlink" title="函数是C程序的构造块"></a>函数是C程序的构造块</h3><h3 id="根据C11标准，C语言有6种语句"><a href="#根据C11标准，C语言有6种语句" class="headerlink" title="根据C11标准，C语言有6种语句"></a>根据C11标准，C语言有6种语句</h3><h3 id="C语言中的6种语句：1-标号语句"><a href="#C语言中的6种语句：1-标号语句" class="headerlink" title="C语言中的6种语句：1.标号语句"></a>C语言中的6种语句：1.标号语句</h3><h3 id="2-复合语句"><a href="#2-复合语句" class="headerlink" title="2.复合语句"></a>2.复合语句</h3><h3 id="3-表达式语句"><a href="#3-表达式语句" class="headerlink" title="3.表达式语句"></a>3.表达式语句</h3><h3 id="4-选择语句"><a href="#4-选择语句" class="headerlink" title="4.选择语句"></a>4.选择语句</h3><h3 id="5-迭代语句"><a href="#5-迭代语句" class="headerlink" title="5.迭代语句"></a>5.迭代语句</h3><h3 id="6-跳转语句"><a href="#6-跳转语句" class="headerlink" title="6.跳转语句"></a>6.跳转语句</h3><h3 id="C语言的6种语句中都有的四个东西：关键字，标识符，运算符，数据"><a href="#C语言的6种语句中都有的四个东西：关键字，标识符，运算符，数据" class="headerlink" title="C语言的6种语句中都有的四个东西：关键字，标识符，运算符，数据"></a>C语言的6种语句中都有的四个东西：关键字，标识符，运算符，数据</h3><h4 id="2-2-1-程序细节"><a href="#2-2-1-程序细节" class="headerlink" title="2.2.1 程序细节"></a>2.2.1 程序细节</h4><h5 id="1-include指令和头文件"><a href="#1-include指令和头文件" class="headerlink" title="1.#include指令和头文件"></a>1.#include指令和头文件</h5><h5 id="include-lt-stdio-h-gt-——该行告诉编译器把stdio-h中的内容包含在当前程序中。"><a href="#include-lt-stdio-h-gt-——该行告诉编译器把stdio-h中的内容包含在当前程序中。" class="headerlink" title="#include&lt;stdio.h&gt;——该行告诉编译器把stdio.h中的内容包含在当前程序中。"></a><code>#include&lt;stdio.h&gt;</code>——该行告诉编译器把stdio.h中的内容包含在当前程序中。</h5><h5 id="include-lt-stdio-h-gt-的作用相当于把stdio-h文件中的所有内容都输入该行所在的位置。"><a href="#include-lt-stdio-h-gt-的作用相当于把stdio-h文件中的所有内容都输入该行所在的位置。" class="headerlink" title="#include&lt;stdio.h&gt;的作用相当于把stdio.h文件中的所有内容都输入该行所在的位置。"></a><code>#include&lt;stdio.h&gt;</code>的作用相当于把stdio.h文件中的所有内容都输入该行所在的位置。</h5><h5 id="实际上，这是一种“拷贝—粘贴”的操作。"><a href="#实际上，这是一种“拷贝—粘贴”的操作。" class="headerlink" title="实际上，这是一种“拷贝—粘贴”的操作。"></a>实际上，这是一种“拷贝—粘贴”的操作。</h5><h5 id="include这行代码是一条C预处理器指令（preprocessor-directive-。"><a href="#include这行代码是一条C预处理器指令（preprocessor-directive-。" class="headerlink" title="#include这行代码是一条C预处理器指令（preprocessor directive)。"></a><code>#include</code>这行代码是一条C预处理器指令（<em>preprocessor directive</em>)。</h5><h5 id="include中的-符号表明，C预处理器在编译器接手之前处理这条指令。"><a href="#include中的-符号表明，C预处理器在编译器接手之前处理这条指令。" class="headerlink" title="#include中的#符号表明，C预处理器在编译器接手之前处理这条指令。"></a><code>#include</code>中的#符号表明，C预处理器在编译器接手之前处理这条指令。</h5><h5 id="通常，C编译器在编译前会对源代码做一些准备工作，即预处理（preprocessing）。"><a href="#通常，C编译器在编译前会对源代码做一些准备工作，即预处理（preprocessing）。" class="headerlink" title="通常，C编译器在编译前会对源代码做一些准备工作，即预处理（preprocessing）。"></a>通常，C编译器在编译前会对源代码做一些准备工作，即预处理（<em>preprocessing</em>）。</h5><h5 id="所有的C编译器软件包都提供stdio-h文件。"><a href="#所有的C编译器软件包都提供stdio-h文件。" class="headerlink" title="所有的C编译器软件包都提供stdio.h文件。"></a>所有的C编译器软件包都提供stdio.h文件。</h5><h5 id="stdio-h是C编译器软件包的标准部分，它提供键盘输入和屏幕输出的支持。"><a href="#stdio-h是C编译器软件包的标准部分，它提供键盘输入和屏幕输出的支持。" class="headerlink" title="stdio.h是C编译器软件包的标准部分，它提供键盘输入和屏幕输出的支持。"></a>stdio.h是C编译器软件包的标准部分，它提供键盘输入和屏幕输出的支持。</h5><h5 id="该文件中包含了供编译器使用的输入和输出函数（如，printf（））信息。"><a href="#该文件中包含了供编译器使用的输入和输出函数（如，printf（））信息。" class="headerlink" title="该文件中包含了供编译器使用的输入和输出函数（如，printf（））信息。"></a>该文件中包含了供编译器使用的输入和输出函数（如，printf（））信息。</h5><h5 id="该文件名的含义是标准输入-输出头文件。"><a href="#该文件名的含义是标准输入-输出头文件。" class="headerlink" title="该文件名的含义是标准输入/输出头文件。"></a>该文件名的含义是标准输入/输出头文件。</h5><h5 id="通常，在C程序顶部的信息集合被称为头文件（header）。"><a href="#通常，在C程序顶部的信息集合被称为头文件（header）。" class="headerlink" title="通常，在C程序顶部的信息集合被称为头文件（header）。"></a>通常，在C程序顶部的信息集合被称为头文件（<em>header</em>）。</h5><h5 id="头文件大概指的就是-h扩展名的文件"><a href="#头文件大概指的就是-h扩展名的文件" class="headerlink" title="头文件大概指的就是.h扩展名的文件"></a>头文件大概指的就是.h扩展名的文件</h5><h5 id="头文件中可以定义一些常量，或者指明函数名以及如何使用它们。"><a href="#头文件中可以定义一些常量，或者指明函数名以及如何使用它们。" class="headerlink" title="头文件中可以定义一些常量，或者指明函数名以及如何使用它们。"></a>头文件中可以定义一些常量，或者指明函数名以及如何使用它们。</h5><h5 id="但是，函数的实际代码在一个预编译代码的库文件中。"><a href="#但是，函数的实际代码在一个预编译代码的库文件中。" class="headerlink" title="但是，函数的实际代码在一个预编译代码的库文件中。"></a>但是，函数的实际代码在一个预编译代码的库文件中。</h5><h5 id="ANSI-ISO-C规定了C编译器必须提供哪些头文件。"><a href="#ANSI-ISO-C规定了C编译器必须提供哪些头文件。" class="headerlink" title="ANSI/ISO C规定了C编译器必须提供哪些头文件。"></a>ANSI/ISO C规定了C编译器必须提供哪些头文件。</h5><h5 id="按照程序需求来使用头文件，省略必要的头文件可能不会影响某一特定程序，但是最好不要这样做。"><a href="#按照程序需求来使用头文件，省略必要的头文件可能不会影响某一特定程序，但是最好不要这样做。" class="headerlink" title="按照程序需求来使用头文件，省略必要的头文件可能不会影响某一特定程序，但是最好不要这样做。"></a>按照程序需求来使用头文件，省略必要的头文件可能不会影响某一特定程序，但是最好不要这样做。</h5><h5 id="本书每次用到库函数，都会用-include指令包含ANSI-ISO标准指定的头文件。"><a href="#本书每次用到库函数，都会用-include指令包含ANSI-ISO标准指定的头文件。" class="headerlink" title="本书每次用到库函数，都会用#include指令包含ANSI/ISO标准指定的头文件。"></a>本书每次用到库函数，都会用#include指令包含ANSI/ISO标准指定的头文件。</h5><h5 id="2-main（）函数"><a href="#2-main（）函数" class="headerlink" title="2.main（）函数"></a>2.main（）函数</h5><h5 id="函数是C程序的基本模块。"><a href="#函数是C程序的基本模块。" class="headerlink" title="函数是C程序的基本模块。"></a>函数是C程序的基本模块。</h5><h5 id="C程序一定从main（）函数开始执行（目前不必考虑例外的情况）。"><a href="#C程序一定从main（）函数开始执行（目前不必考虑例外的情况）。" class="headerlink" title="C程序一定从main（）函数开始执行（目前不必考虑例外的情况）。"></a>C程序一定从main（）函数开始执行（目前不必考虑例外的情况）。</h5><h5 id="除了main（）函数，你可以任意命名其他函数。"><a href="#除了main（）函数，你可以任意命名其他函数。" class="headerlink" title="除了main（）函数，你可以任意命名其他函数。"></a>除了main（）函数，你可以任意命名其他函数。</h5><h5 id="圆括号表明main（）是一个函数名。"><a href="#圆括号表明main（）是一个函数名。" class="headerlink" title="圆括号表明main（）是一个函数名。"></a>圆括号表明main（）是一个函数名。</h5><h5 id="int和void是标准ANSI-C定义main（）的一部分"><a href="#int和void是标准ANSI-C定义main（）的一部分" class="headerlink" title="int和void是标准ANSI C定义main（）的一部分"></a>int和void是标准ANSI C定义main（）的一部分</h5><h5 id="（如果使用ANSI-C之前的编译器，请省略void；考虑到兼容的问题，请尽量使用较新的C编译器）"><a href="#（如果使用ANSI-C之前的编译器，请省略void；考虑到兼容的问题，请尽量使用较新的C编译器）" class="headerlink" title="（如果使用ANSI C之前的编译器，请省略void；考虑到兼容的问题，请尽量使用较新的C编译器）"></a>（如果使用ANSI C之前的编译器，请省略void；考虑到兼容的问题，请尽量使用较新的C编译器）</h5><h5 id="int是main（）函数的返回类型。"><a href="#int是main（）函数的返回类型。" class="headerlink" title="int是main（）函数的返回类型。"></a>int是main（）函数的返回类型。</h5><h5 id="int表明main（）函数返回一个整数。"><a href="#int表明main（）函数返回一个整数。" class="headerlink" title="int表明main（）函数返回一个整数。"></a>int表明main（）函数返回一个整数。</h5><h5 id="返回到这里？返回给操作系统。"><a href="#返回到这里？返回给操作系统。" class="headerlink" title="返回到这里？返回给操作系统。"></a>返回到这里？返回给操作系统。</h5><h5 id="void表明main（）不带任何参数。"><a href="#void表明main（）不带任何参数。" class="headerlink" title="void表明main（）不带任何参数。"></a>void表明main（）不带任何参数。</h5><h5 id="通常，函数名后面的圆括号中包含一些传入函数的信息。该例中没有传递任何信息。因此，圆括号内是单词void。"><a href="#通常，函数名后面的圆括号中包含一些传入函数的信息。该例中没有传递任何信息。因此，圆括号内是单词void。" class="headerlink" title="通常，函数名后面的圆括号中包含一些传入函数的信息。该例中没有传递任何信息。因此，圆括号内是单词void。"></a>通常，函数名后面的圆括号中包含一些传入函数的信息。该例中没有传递任何信息。因此，圆括号内是单词void。</h5><h4 id="需要强调的是，只要坚持使用标准形式，把程序从一个编译器移至另一个编译器时就不会出什么问题。"><a href="#需要强调的是，只要坚持使用标准形式，把程序从一个编译器移至另一个编译器时就不会出什么问题。" class="headerlink" title="需要强调的是，只要坚持使用标准形式，把程序从一个编译器移至另一个编译器时就不会出什么问题。"></a>需要强调的是，只要坚持使用标准形式，把程序从一个编译器移至另一个编译器时就不会出什么问题。</h4><h5 id="3-注释"><a href="#3-注释" class="headerlink" title="3.注释"></a>3.注释</h5><h5 id="在程序中，被-两个符号括起来的部分是注释。写注释能让他人（包括自己）更容易明白你所写的程序。"><a href="#在程序中，被-两个符号括起来的部分是注释。写注释能让他人（包括自己）更容易明白你所写的程序。" class="headerlink" title="在程序中，被/* */两个符号括起来的部分是注释。写注释能让他人（包括自己）更容易明白你所写的程序。"></a>在程序中，被/* */两个符号括起来的部分是注释。写注释能让他人（包括自己）更容易明白你所写的程序。</h5><h5 id="C语言注释的好处之一是，可将注释放在任意的地方，甚至是与要解释的内容在同一行。"><a href="#C语言注释的好处之一是，可将注释放在任意的地方，甚至是与要解释的内容在同一行。" class="headerlink" title="C语言注释的好处之一是，可将注释放在任意的地方，甚至是与要解释的内容在同一行。"></a>C语言注释的好处之一是，可将注释放在任意的地方，甚至是与要解释的内容在同一行。</h5><h5 id="较长的注释可单独放一行或多行。"><a href="#较长的注释可单独放一行或多行。" class="headerlink" title="较长的注释可单独放一行或多行。"></a>较长的注释可单独放一行或多行。</h5><h5 id="C99新增了另一种风格的注释，普遍用于C-和Java。这种新风格使用-符号创建注释，仅限于单行。"><a href="#C99新增了另一种风格的注释，普遍用于C-和Java。这种新风格使用-符号创建注释，仅限于单行。" class="headerlink" title="C99新增了另一种风格的注释，普遍用于C++和Java。这种新风格使用//符号创建注释，仅限于单行。"></a>C99新增了另一种风格的注释，普遍用于C++和Java。这种新风格使用//符号创建注释，仅限于单行。</h5><h5 id="因为一行末尾就标志着注释的结束，所以这种风格的注释只需在注释开始处标明-符号即可。"><a href="#因为一行末尾就标志着注释的结束，所以这种风格的注释只需在注释开始处标明-符号即可。" class="headerlink" title="因为一行末尾就标志着注释的结束，所以这种风格的注释只需在注释开始处标明//符号即可。"></a>因为一行末尾就标志着注释的结束，所以这种风格的注释只需在注释开始处标明//符号即可。</h5><h5 id="一些编译器可能不支持这一特性。还有一些编译器需要更改设置，才能支持C99或C11的特性。"><a href="#一些编译器可能不支持这一特性。还有一些编译器需要更改设置，才能支持C99或C11的特性。" class="headerlink" title="一些编译器可能不支持这一特性。还有一些编译器需要更改设置，才能支持C99或C11的特性。"></a>一些编译器可能不支持这一特性。还有一些编译器需要更改设置，才能支持C99或C11的特性。</h5><h5 id="注意，注释只是为了帮助读者理解程序，编译器会忽略它们。"><a href="#注意，注释只是为了帮助读者理解程序，编译器会忽略它们。" class="headerlink" title="注意，注释只是为了帮助读者理解程序，编译器会忽略它们。"></a>注意，注释只是为了帮助读者理解程序，编译器会忽略它们。</h5><h5 id="4-花括号，函数体和块"><a href="#4-花括号，函数体和块" class="headerlink" title="4.花括号，函数体和块"></a>4.花括号，函数体和块</h5><h5 id="一般而言，所有的C函数都使用花括号标记函数体的开始和结束。这是规定，不能省略。"><a href="#一般而言，所有的C函数都使用花括号标记函数体的开始和结束。这是规定，不能省略。" class="headerlink" title="一般而言，所有的C函数都使用花括号标记函数体的开始和结束。这是规定，不能省略。"></a>一般而言，所有的C函数都使用花括号标记函数体的开始和结束。这是规定，不能省略。</h5><h5 id="只能花括号（-）能起这种作用，圆括号（（））和方括号（-）都不行。"><a href="#只能花括号（-）能起这种作用，圆括号（（））和方括号（-）都不行。" class="headerlink" title="只能花括号（{}）能起这种作用，圆括号（（））和方括号（[]）都不行。"></a>只能花括号（{}）能起这种作用，圆括号（（））和方括号（[]）都不行。</h5><h5 id="左花括号（-）表示函数定义开始，右花括号（-）表示函数定义结束。"><a href="#左花括号（-）表示函数定义开始，右花括号（-）表示函数定义结束。" class="headerlink" title="左花括号（{）表示函数定义开始，右花括号（}）表示函数定义结束。"></a>左花括号（{）表示函数定义开始，右花括号（}）表示函数定义结束。</h5><h5 id="花括号还可用于把函数中的多条语句合并为一个单元或块。"><a href="#花括号还可用于把函数中的多条语句合并为一个单元或块。" class="headerlink" title="花括号还可用于把函数中的多条语句合并为一个单元或块。"></a>花括号还可用于把函数中的多条语句合并为一个单元或块。</h5><h5 id="5-声明"><a href="#5-声明" class="headerlink" title="5.声明"></a>5.声明</h5><h5 id="int-num；"><a href="#int-num；" class="headerlink" title="int num；"></a>int num；</h5><h5 id="上面这行代码叫作声明（declaration）。声明是C语言最重要的特性之一。"><a href="#上面这行代码叫作声明（declaration）。声明是C语言最重要的特性之一。" class="headerlink" title="上面这行代码叫作声明（declaration）。声明是C语言最重要的特性之一。"></a>上面这行代码叫作声明（<em>declaration</em>）。声明是C语言最重要的特性之一。</h5><h5 id="在该例中，声明完成了两件事。"><a href="#在该例中，声明完成了两件事。" class="headerlink" title="在该例中，声明完成了两件事。"></a>在该例中，声明完成了两件事。</h5><h5 id="其一，在函数中有一个名为num的变量（variable）。"><a href="#其一，在函数中有一个名为num的变量（variable）。" class="headerlink" title="其一，在函数中有一个名为num的变量（variable）。"></a>其一，在函数中有一个名为num的变量（<em>variable</em>）。</h5><h5 id="其二，int表明num是一个整数（即，没有小数点或小数部分的数）。"><a href="#其二，int表明num是一个整数（即，没有小数点或小数部分的数）。" class="headerlink" title="其二，int表明num是一个整数（即，没有小数点或小数部分的数）。"></a>其二，int表明num是一个整数（即，没有小数点或小数部分的数）。</h5><h5 id="编译器使用这些信息为num变量在内存中分配存储空间。"><a href="#编译器使用这些信息为num变量在内存中分配存储空间。" class="headerlink" title="编译器使用这些信息为num变量在内存中分配存储空间。"></a>编译器使用这些信息为num变量在内存中分配存储空间。</h5><h5 id="分号在C语言中是大部分语句和声明的一部分，不像在Pascal中只是语句间的分隔符。"><a href="#分号在C语言中是大部分语句和声明的一部分，不像在Pascal中只是语句间的分隔符。" class="headerlink" title="分号在C语言中是大部分语句和声明的一部分，不像在Pascal中只是语句间的分隔符。"></a>分号在C语言中是大部分语句和声明的一部分，不像在Pascal中只是语句间的分隔符。</h5><h5 id="int是C语言的一个关键字（keyword）。"><a href="#int是C语言的一个关键字（keyword）。" class="headerlink" title="int是C语言的一个关键字（keyword）。"></a>int是C语言的一个关键字（<em>keyword</em>）。</h5><h5 id="关键字是语言定义的单词，不能做其他用途。例如，不能用int作为函数名和变量名。"><a href="#关键字是语言定义的单词，不能做其他用途。例如，不能用int作为函数名和变量名。" class="headerlink" title="关键字是语言定义的单词，不能做其他用途。例如，不能用int作为函数名和变量名。"></a>关键字是语言定义的单词，不能做其他用途。例如，不能用int作为函数名和变量名。</h5><h5 id="示例中的num是一个标识符（identifier），也就一个变量，函数或其他实体的名称。"><a href="#示例中的num是一个标识符（identifier），也就一个变量，函数或其他实体的名称。" class="headerlink" title="示例中的num是一个标识符（identifier），也就一个变量，函数或其他实体的名称。"></a>示例中的num是一个标识符（<em>identifier</em>），也就一个变量，函数或其他实体的名称。</h5><h5 id="因此，声明把特定标识符与计算机内存中的特定位置联系起来，同时也确定了储存在某位置的信息类型或数据类型。"><a href="#因此，声明把特定标识符与计算机内存中的特定位置联系起来，同时也确定了储存在某位置的信息类型或数据类型。" class="headerlink" title="因此，声明把特定标识符与计算机内存中的特定位置联系起来，同时也确定了储存在某位置的信息类型或数据类型。"></a>因此，声明把特定标识符与计算机内存中的特定位置联系起来，同时也确定了储存在某位置的信息类型或数据类型。</h5><h5 id="在C语言中，所有变量都必须先声明才能使用。这意味着必须列出程序中用到的所有变量名及其类型。"><a href="#在C语言中，所有变量都必须先声明才能使用。这意味着必须列出程序中用到的所有变量名及其类型。" class="headerlink" title="在C语言中，所有变量都必须先声明才能使用。这意味着必须列出程序中用到的所有变量名及其类型。"></a>在C语言中，所有变量都必须先声明才能使用。这意味着必须列出程序中用到的所有变量名及其类型。</h5><h5 id="C99和C11遵循C-的惯例，可以把声明放在块中的任何位置。"><a href="#C99和C11遵循C-的惯例，可以把声明放在块中的任何位置。" class="headerlink" title="C99和C11遵循C++的惯例，可以把声明放在块中的任何位置。"></a>C99和C11遵循C++的惯例，可以把声明放在块中的任何位置。</h5><h5 id="尽管如此，首次使用变量之前一定要先声明它。"><a href="#尽管如此，首次使用变量之前一定要先声明它。" class="headerlink" title="尽管如此，首次使用变量之前一定要先声明它。"></a>尽管如此，首次使用变量之前一定要先声明它。</h5><h5 id="-2"><a href="#-2" class="headerlink" title=""></a></h5><h5 id="声明变量的4个理由"><a href="#声明变量的4个理由" class="headerlink" title="声明变量的4个理由"></a>声明变量的4个理由</h5><h5 id="1-如果事先未声明变量，C程序将无法通过编译。"><a href="#1-如果事先未声明变量，C程序将无法通过编译。" class="headerlink" title="1.如果事先未声明变量，C程序将无法通过编译。"></a>1.如果事先未声明变量，C程序将无法通过编译。</h5><h5 id="2-把所有的变量放在一处，方便读者查找和理解程序的用途。如果变量名无法表述清楚，在注释中解释变量的含义。"><a href="#2-把所有的变量放在一处，方便读者查找和理解程序的用途。如果变量名无法表述清楚，在注释中解释变量的含义。" class="headerlink" title="2.把所有的变量放在一处，方便读者查找和理解程序的用途。如果变量名无法表述清楚，在注释中解释变量的含义。"></a>2.把所有的变量放在一处，方便读者查找和理解程序的用途。如果变量名无法表述清楚，在注释中解释变量的含义。</h5><h5 id="3-声明变量会促使你在编写程序之前做一些计划。程序在开始时要获取哪些信息？希望程序如何输出？表示数据最好的方式是什么？"><a href="#3-声明变量会促使你在编写程序之前做一些计划。程序在开始时要获取哪些信息？希望程序如何输出？表示数据最好的方式是什么？" class="headerlink" title="3.声明变量会促使你在编写程序之前做一些计划。程序在开始时要获取哪些信息？希望程序如何输出？表示数据最好的方式是什么？"></a>3.声明变量会促使你在编写程序之前做一些计划。程序在开始时要获取哪些信息？希望程序如何输出？表示数据最好的方式是什么？</h5><h5 id="4-声明变量有助于发现隐藏在程序中的小错误，如变量名拼写错误。"><a href="#4-声明变量有助于发现隐藏在程序中的小错误，如变量名拼写错误。" class="headerlink" title="4.声明变量有助于发现隐藏在程序中的小错误，如变量名拼写错误。"></a>4.声明变量有助于发现隐藏在程序中的小错误，如变量名拼写错误。</h5><h5 id="-3"><a href="#-3" class="headerlink" title=""></a></h5><h3 id="注：给变量命名时要使用有意义的变量名或标识符。"><a href="#注：给变量命名时要使用有意义的变量名或标识符。" class="headerlink" title="注：给变量命名时要使用有意义的变量名或标识符。"></a>注：给变量命名时要使用有意义的变量名或标识符。</h3><h3 id="如果变量名无法清楚地表达自身的用途，可在注释中进一步说明。"><a href="#如果变量名无法清楚地表达自身的用途，可在注释中进一步说明。" class="headerlink" title="如果变量名无法清楚地表达自身的用途，可在注释中进一步说明。"></a>如果变量名无法清楚地表达自身的用途，可在注释中进一步说明。</h3><h3 id="C99和C11允许使用更长的标识符名，但是编译器只识别前63个字符。"><a href="#C99和C11允许使用更长的标识符名，但是编译器只识别前63个字符。" class="headerlink" title="C99和C11允许使用更长的标识符名，但是编译器只识别前63个字符。"></a>C99和C11允许使用更长的标识符名，但是编译器只识别前63个字符。</h3><h3 id="对于外部标识符（参阅第12章），只允许使用31个字符。"><a href="#对于外部标识符（参阅第12章），只允许使用31个字符。" class="headerlink" title="对于外部标识符（参阅第12章），只允许使用31个字符。"></a>对于外部标识符（参阅第12章），只允许使用31个字符。</h3><h3 id="可以用小写字母，大写字母，数字，和下划线（-）来命名。"><a href="#可以用小写字母，大写字母，数字，和下划线（-）来命名。" class="headerlink" title="可以用小写字母，大写字母，数字，和下划线（_）来命名。"></a>可以用小写字母，大写字母，数字，和下划线（_）来命名。</h3><h3 id="名称的第1个字符必须是字符或下划线，不能是数字。"><a href="#名称的第1个字符必须是字符或下划线，不能是数字。" class="headerlink" title="名称的第1个字符必须是字符或下划线，不能是数字。"></a>名称的第1个字符必须是字符或下划线，不能是数字。</h3><h3 id="操作系统和C库经常使用以一个或两个下划线字符开始的标识符（如，-kcab），因此最好避免在自己的程序中使用这种名称。"><a href="#操作系统和C库经常使用以一个或两个下划线字符开始的标识符（如，-kcab），因此最好避免在自己的程序中使用这种名称。" class="headerlink" title="操作系统和C库经常使用以一个或两个下划线字符开始的标识符（如，_kcab），因此最好避免在自己的程序中使用这种名称。"></a>操作系统和C库经常使用以一个或两个下划线字符开始的标识符（如，_kcab），因此最好避免在自己的程序中使用这种名称。</h3><h3 id="C语言的名称区分大小写，即把一个字母的大写和小写视为两个不同的字符。"><a href="#C语言的名称区分大小写，即把一个字母的大写和小写视为两个不同的字符。" class="headerlink" title="C语言的名称区分大小写，即把一个字母的大写和小写视为两个不同的字符。"></a>C语言的名称区分大小写，即把一个字母的大写和小写视为两个不同的字符。</h3><h3 id="-4"><a href="#-4" class="headerlink" title=""></a></h3><h5 id="6-赋值"><a href="#6-赋值" class="headerlink" title="6.赋值"></a>6.赋值</h5><h5 id="num-1；"><a href="#num-1；" class="headerlink" title="num = 1；"></a>num = 1；</h5><h5 id="赋值是C语言的基本操作之一。"><a href="#赋值是C语言的基本操作之一。" class="headerlink" title="赋值是C语言的基本操作之一。"></a>赋值是C语言的基本操作之一。</h5><h5 id="该行代码的意思是“把值1赋给变量num”。"><a href="#该行代码的意思是“把值1赋给变量num”。" class="headerlink" title="该行代码的意思是“把值1赋给变量num”。"></a>该行代码的意思是“把值1赋给变量num”。</h5><h5 id="“-”是赋值运算符。"><a href="#“-”是赋值运算符。" class="headerlink" title="“=”是赋值运算符。"></a>“=”是赋值运算符。</h5><h5 id="C语言通过赋值运算符（-）完成赋值操作。"><a href="#C语言通过赋值运算符（-）完成赋值操作。" class="headerlink" title="C语言通过赋值运算符（=）完成赋值操作。"></a>C语言通过赋值运算符（=）完成赋值操作。</h5><h5 id="在执行int-num；声明时，编译器在计算机内存中为变量num预留了空间，然后在执行这行代码时，把值储存在之前预留的位置。"><a href="#在执行int-num；声明时，编译器在计算机内存中为变量num预留了空间，然后在执行这行代码时，把值储存在之前预留的位置。" class="headerlink" title="在执行int num；声明时，编译器在计算机内存中为变量num预留了空间，然后在执行这行代码时，把值储存在之前预留的位置。"></a>在执行int num；声明时，编译器在计算机内存中为变量num预留了空间，然后在执行这行代码时，把值储存在之前预留的位置。</h5><h5 id="可以给num赋不同的值，这就是num之所以被称为变量（variable）的原因。"><a href="#可以给num赋不同的值，这就是num之所以被称为变量（variable）的原因。" class="headerlink" title="可以给num赋不同的值，这就是num之所以被称为变量（variable）的原因。"></a>可以给num赋不同的值，这就是num之所以被称为变量（<em>variable</em>）的原因。</h5><h5 id="注意，该行代码从右侧把值赋到左侧。另外，该行代码以分号结尾。"><a href="#注意，该行代码从右侧把值赋到左侧。另外，该行代码以分号结尾。" class="headerlink" title="注意，该行代码从右侧把值赋到左侧。另外，该行代码以分号结尾。"></a>注意，该行代码从右侧把值赋到左侧。另外，该行代码以分号结尾。</h5><h5 id="7-printf（）函数"><a href="#7-printf（）函数" class="headerlink" title="7.printf（）函数"></a>7.printf（）函数</h5><h5 id="printf-quot-My-favorite-number-is-d-because-it-is-first-n-quot-num"><a href="#printf-quot-My-favorite-number-is-d-because-it-is-first-n-quot-num" class="headerlink" title="printf(&quot;My favorite number is %d because it is first.\n&quot;,num);"></a><code>printf(&quot;My favorite number is %d because it is first.\n&quot;,num);</code></h5><h5 id="在程序中使用函数叫作调用函数。"><a href="#在程序中使用函数叫作调用函数。" class="headerlink" title="在程序中使用函数叫作调用函数。"></a>在程序中使用函数叫作调用函数。</h5><h5 id="printf（）函数是C语言的一个标准函数。"><a href="#printf（）函数是C语言的一个标准函数。" class="headerlink" title="printf（）函数是C语言的一个标准函数。"></a>printf（）函数是C语言的一个标准函数。</h5><h5 id="圆括号表明printf是一个函数名。"><a href="#圆括号表明printf是一个函数名。" class="headerlink" title="圆括号表明printf是一个函数名。"></a>圆括号表明printf是一个函数名。</h5><h5 id="圆括号中的内容是从main（）函数传递给printf（）函数的信息。"><a href="#圆括号中的内容是从main（）函数传递给printf（）函数的信息。" class="headerlink" title="圆括号中的内容是从main（）函数传递给printf（）函数的信息。"></a>圆括号中的内容是从main（）函数传递给printf（）函数的信息。</h5><h5 id="该信息被称为参数，函数的实际参数（actual-argument）"><a href="#该信息被称为参数，函数的实际参数（actual-argument）" class="headerlink" title="该信息被称为参数，函数的实际参数（actual argument）"></a>该信息被称为参数，函数的实际参数（<em>actual argument</em>）</h5><h5 id="在C语言中，实际参数（简称实参）是传递给函数的特定值，形式参数（简称形参）是函数中用于储存值的变量。"><a href="#在C语言中，实际参数（简称实参）是传递给函数的特定值，形式参数（简称形参）是函数中用于储存值的变量。" class="headerlink" title="在C语言中，实际参数（简称实参）是传递给函数的特定值，形式参数（简称形参）是函数中用于储存值的变量。"></a>在C语言中，实际参数（简称实参）是传递给函数的特定值，形式参数（简称形参）是函数中用于储存值的变量。</h5><h5 id="printf（）函数用参数来做什么？"><a href="#printf（）函数用参数来做什么？" class="headerlink" title="printf（）函数用参数来做什么？"></a>printf（）函数用参数来做什么？</h5><h5 id="该函数会查看双引号中的内容，并将其打印在屏幕上。"><a href="#该函数会查看双引号中的内容，并将其打印在屏幕上。" class="headerlink" title="该函数会查看双引号中的内容，并将其打印在屏幕上。"></a>该函数会查看双引号中的内容，并将其打印在屏幕上。</h5><h5 id="n组合（依次输入这两个字符）代表一个换行符（newline-character）。"><a href="#n组合（依次输入这两个字符）代表一个换行符（newline-character）。" class="headerlink" title="\n组合（依次输入这两个字符）代表一个换行符（newline character）。"></a>\n组合（依次输入这两个字符）代表一个换行符（<em>newline character</em>）。</h5><h5 id="对于printf（）而言，它的意思是“在下一行的最左边开始新的一行”。"><a href="#对于printf（）而言，它的意思是“在下一行的最左边开始新的一行”。" class="headerlink" title="对于printf（）而言，它的意思是“在下一行的最左边开始新的一行”。"></a>对于printf（）而言，它的意思是“在下一行的最左边开始新的一行”。</h5><h5 id="换行符仅会影响程序输出的显示格式。"><a href="#换行符仅会影响程序输出的显示格式。" class="headerlink" title="换行符仅会影响程序输出的显示格式。"></a>换行符仅会影响程序输出的显示格式。</h5><h5 id="换行符是一个转义序列（escape-sequence）。"><a href="#换行符是一个转义序列（escape-sequence）。" class="headerlink" title="换行符是一个转义序列（escape sequence）。"></a>换行符是一个转义序列（<em>escape sequence</em>）。</h5><h5 id="转义序列用于代表难以表示或无法输入的字符。如，-t代表Tab键，-b代表Backspace键（退格键）。"><a href="#转义序列用于代表难以表示或无法输入的字符。如，-t代表Tab键，-b代表Backspace键（退格键）。" class="headerlink" title="转义序列用于代表难以表示或无法输入的字符。如，\t代表Tab键，\b代表Backspace键（退格键）。"></a>转义序列用于代表难以表示或无法输入的字符。如，\t代表Tab键，\b代表Backspace键（退格键）。</h5><h5 id="每个转义序列都以反斜杠字符（-）开始。"><a href="#每个转义序列都以反斜杠字符（-）开始。" class="headerlink" title="每个转义序列都以反斜杠字符（\）开始。"></a>每个转义序列都以反斜杠字符（\）开始。</h5><h5 id="d相当于是一个占位符，其作用是指明输出num值的位置。"><a href="#d相当于是一个占位符，其作用是指明输出num值的位置。" class="headerlink" title="%d相当于是一个占位符，其作用是指明输出num值的位置。"></a>%d相当于是一个占位符，其作用是指明输出num值的位置。</h5><h5 id="提醒程序，要在该处打印一个变量，d表明把变量作为十进制整数打印。"><a href="#提醒程序，要在该处打印一个变量，d表明把变量作为十进制整数打印。" class="headerlink" title="%提醒程序，要在该处打印一个变量，d表明把变量作为十进制整数打印。"></a>%提醒程序，要在该处打印一个变量，d表明把变量作为十进制整数打印。</h5><h5 id="printf（）函数名中的f提醒用户，这是一种格式化打印函数。"><a href="#printf（）函数名中的f提醒用户，这是一种格式化打印函数。" class="headerlink" title="printf（）函数名中的f提醒用户，这是一种格式化打印函数。"></a>printf（）函数名中的f提醒用户，这是一种格式化打印函数。</h5><h5 id="8-return-语句"><a href="#8-return-语句" class="headerlink" title="8.return 语句"></a>8.return 语句</h5><h5 id="return-0；"><a href="#return-0；" class="headerlink" title="return 0；"></a>return 0；</h5><h5 id="int-main-void-中的int表明main（）函数应返回一个整数。C标准要求main（）这样做。"><a href="#int-main-void-中的int表明main（）函数应返回一个整数。C标准要求main（）这样做。" class="headerlink" title="int main(void)中的int表明main（）函数应返回一个整数。C标准要求main（）这样做。"></a>int main(void)中的int表明main（）函数应返回一个整数。C标准要求main（）这样做。</h5><h5 id="该语句以return关键字开始，后面是待返回的值，并以分号结尾。"><a href="#该语句以return关键字开始，后面是待返回的值，并以分号结尾。" class="headerlink" title="该语句以return关键字开始，后面是待返回的值，并以分号结尾。"></a>该语句以return关键字开始，后面是待返回的值，并以分号结尾。</h5><h5 id="有返回值的C函数要有return语句。"><a href="#有返回值的C函数要有return语句。" class="headerlink" title="有返回值的C函数要有return语句。"></a>有返回值的C函数要有return语句。</h5><h5 id="因此，强烈建议读者养成在main（）函数中保留return语句的好习惯。"><a href="#因此，强烈建议读者养成在main（）函数中保留return语句的好习惯。" class="headerlink" title="因此，强烈建议读者养成在main（）函数中保留return语句的好习惯。"></a>因此，强烈建议读者养成在main（）函数中保留return语句的好习惯。</h5><h5 id="注：在C语言中，return语句是一种跳转语句。"><a href="#注：在C语言中，return语句是一种跳转语句。" class="headerlink" title="注：在C语言中，return语句是一种跳转语句。"></a>注：在C语言中，return语句是一种跳转语句。</h5><h5 id="-5"><a href="#-5" class="headerlink" title=""></a></h5><h4 id="2-2-2-简单程序的结构"><a href="#2-2-2-简单程序的结构" class="headerlink" title="2.2.2 简单程序的结构"></a>2.2.2 简单程序的结构</h4><h5 id="程序由一个或多个函数组成，必须有main（）函数。"><a href="#程序由一个或多个函数组成，必须有main（）函数。" class="headerlink" title="程序由一个或多个函数组成，必须有main（）函数。"></a>程序由一个或多个函数组成，必须有main（）函数。</h5><h5 id="函数由函数头和函数体组成。"><a href="#函数由函数头和函数体组成。" class="headerlink" title="函数由函数头和函数体组成。"></a>函数由函数头和函数体组成。</h5><h5 id="函数头包括函数名，传入该函数的信息类型和函数的返回类型。"><a href="#函数头包括函数名，传入该函数的信息类型和函数的返回类型。" class="headerlink" title="函数头包括函数名，传入该函数的信息类型和函数的返回类型。"></a>函数头包括函数名，传入该函数的信息类型和函数的返回类型。</h5><h5 id="通过函数名后的圆括号可识别出函数，圆括号里可能为空，可能有参数。"><a href="#通过函数名后的圆括号可识别出函数，圆括号里可能为空，可能有参数。" class="headerlink" title="通过函数名后的圆括号可识别出函数，圆括号里可能为空，可能有参数。"></a>通过函数名后的圆括号可识别出函数，圆括号里可能为空，可能有参数。</h5><h5 id="函数体被花括号括起来，由一系列语句，声明组成。"><a href="#函数体被花括号括起来，由一系列语句，声明组成。" class="headerlink" title="函数体被花括号括起来，由一系列语句，声明组成。"></a>函数体被花括号括起来，由一系列语句，声明组成。</h5><h5 id="简而言之，一个简单的C程序的格式如下："><a href="#简而言之，一个简单的C程序的格式如下：" class="headerlink" title="简而言之，一个简单的C程序的格式如下："></a>简而言之，一个简单的C程序的格式如下：</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    语句</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">（大部分语句都以分号结尾。）</span><br></pre></td></tr></table></figure>
+
+<h5 id="-6"><a href="#-6" class="headerlink" title=""></a></h5><h4 id="2-2-3-提高程序的可读性的技巧"><a href="#2-2-3-提高程序的可读性的技巧" class="headerlink" title="2.2.3 提高程序的可读性的技巧"></a>2.2.3 提高程序的可读性的技巧</h4><h5 id="编写可读性高的程序是良好的编程习惯。可读性高的程序更容易理解，以后也更容易修改和更正。提高程序的可读性还有助于你理清编程思路。以下并非是C语言的要求"><a href="#编写可读性高的程序是良好的编程习惯。可读性高的程序更容易理解，以后也更容易修改和更正。提高程序的可读性还有助于你理清编程思路。以下并非是C语言的要求" class="headerlink" title="编写可读性高的程序是良好的编程习惯。可读性高的程序更容易理解，以后也更容易修改和更正。提高程序的可读性还有助于你理清编程思路。以下并非是C语言的要求"></a>编写可读性高的程序是良好的编程习惯。可读性高的程序更容易理解，以后也更容易修改和更正。提高程序的可读性还有助于你理清编程思路。以下并非是C语言的要求</h5><h5 id="1-选择有意义的函数名和写注释。"><a href="#1-选择有意义的函数名和写注释。" class="headerlink" title="1.选择有意义的函数名和写注释。"></a>1.选择有意义的函数名和写注释。</h5><h5 id="注意，使用这两种技巧时应相得益彰，避免重复啰嗦。"><a href="#注意，使用这两种技巧时应相得益彰，避免重复啰嗦。" class="headerlink" title="注意，使用这两种技巧时应相得益彰，避免重复啰嗦。"></a>注意，使用这两种技巧时应相得益彰，避免重复啰嗦。</h5><h5 id="2-在函数中用空行分隔概念上的多个部分。"><a href="#2-在函数中用空行分隔概念上的多个部分。" class="headerlink" title="2.在函数中用空行分隔概念上的多个部分。"></a>2.在函数中用空行分隔概念上的多个部分。</h5><h5 id="3-每条语句各占一行。"><a href="#3-每条语句各占一行。" class="headerlink" title="3.每条语句各占一行。"></a>3.每条语句各占一行。</h5><h5 id="-7"><a href="#-7" class="headerlink" title=""></a></h5><h4 id="2-2-4-定义并使用自己的函数"><a href="#2-2-4-定义并使用自己的函数" class="headerlink" title="2.2.4 定义并使用自己的函数"></a>2.2.4 定义并使用自己的函数</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> butler&lt;<span class="type">void</span>&gt;; <span class="comment">/* ANSI/ISO C函数原型 */</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    butler();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">butler</span><span class="params">(<span class="type">void</span>)</span> <span class="comment">/* 函数定义开始 */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Are you ready?\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="butler（）函数在程序中出现了3次。"><a href="#butler（）函数在程序中出现了3次。" class="headerlink" title="butler（）函数在程序中出现了3次。"></a>butler（）函数在程序中出现了3次。</h5><h5 id="第1次是函数原型（prototype），告知编译器在程序中要使用该函数；"><a href="#第1次是函数原型（prototype），告知编译器在程序中要使用该函数；" class="headerlink" title="第1次是函数原型（prototype），告知编译器在程序中要使用该函数；"></a>第1次是函数原型（<em>prototype</em>），告知编译器在程序中要使用该函数；</h5><h5 id="第2次以函数调用（function-call）的形式出现在main（）中；"><a href="#第2次以函数调用（function-call）的形式出现在main（）中；" class="headerlink" title="第2次以函数调用（function call）的形式出现在main（）中；"></a>第2次以函数调用（<em>function call</em>）的形式出现在main（）中；</h5><h5 id="第3次出现在函数定义（function-definition）中，函数定义即是函数本身的源代码。"><a href="#第3次出现在函数定义（function-definition）中，函数定义即是函数本身的源代码。" class="headerlink" title="第3次出现在函数定义（function definition）中，函数定义即是函数本身的源代码。"></a>第3次出现在函数定义（<em>function definition</em>）中，函数定义即是函数本身的源代码。</h5><h5 id="-8"><a href="#-8" class="headerlink" title=""></a></h5><h5 id="函数原型是一种声明形式，告知编译器正在使用某函数，因此函数原型也被称为函数声明（function-declaration）。"><a href="#函数原型是一种声明形式，告知编译器正在使用某函数，因此函数原型也被称为函数声明（function-declaration）。" class="headerlink" title="函数原型是一种声明形式，告知编译器正在使用某函数，因此函数原型也被称为函数声明（function declaration）。"></a>函数原型是一种声明形式，告知编译器正在使用某函数，因此函数原型也被称为函数声明（<em>function declaration</em>）。</h5><h5 id="函数原型指明了函数的属性。"><a href="#函数原型指明了函数的属性。" class="headerlink" title="函数原型指明了函数的属性。"></a>函数原型指明了函数的属性。</h5><h5 id="例如，butler（）函数原型中的第1个void表明，butler（）函数没有返回值（通常，被调函数会向主调函数返回一个值，但是butler（）函数没有）"><a href="#例如，butler（）函数原型中的第1个void表明，butler（）函数没有返回值（通常，被调函数会向主调函数返回一个值，但是butler（）函数没有）" class="headerlink" title="例如，butler（）函数原型中的第1个void表明，butler（）函数没有返回值（通常，被调函数会向主调函数返回一个值，但是butler（）函数没有）"></a>例如，butler（）函数原型中的第1个void表明，butler（）函数没有返回值（通常，被调函数会向主调函数返回一个值，但是butler（）函数没有）</h5><h5 id="第2个void（butler（void）中的void）的意思是butler（）函数不带参数。"><a href="#第2个void（butler（void）中的void）的意思是butler（）函数不带参数。" class="headerlink" title="第2个void（butler（void）中的void）的意思是butler（）函数不带参数。"></a>第2个void（butler（void）中的void）的意思是butler（）函数不带参数。</h5><h5 id="注意，void在这里的意思是“空的”，而不是“无效”。"><a href="#注意，void在这里的意思是“空的”，而不是“无效”。" class="headerlink" title="注意，void在这里的意思是“空的”，而不是“无效”。"></a>注意，void在这里的意思是“空的”，而不是“无效”。</h5><h5 id="在main（）中调用butler（）很简单，写出函数名和圆括号即可。"><a href="#在main（）中调用butler（）很简单，写出函数名和圆括号即可。" class="headerlink" title="在main（）中调用butler（）很简单，写出函数名和圆括号即可。"></a>在main（）中调用butler（）很简单，写出函数名和圆括号即可。</h5><h5 id="程序的最后部分是butler（）函数的定义，其形式和main（）相同，都包含函数头和用花括号括起来的函数体。"><a href="#程序的最后部分是butler（）函数的定义，其形式和main（）相同，都包含函数头和用花括号括起来的函数体。" class="headerlink" title="程序的最后部分是butler（）函数的定义，其形式和main（）相同，都包含函数头和用花括号括起来的函数体。"></a>程序的最后部分是butler（）函数的定义，其形式和main（）相同，都包含函数头和用花括号括起来的函数体。</h5><h5 id="函数头重述了函数原型的信息：butler（）不带任何参数，且没有返回值。如果使用老式编译器，请去掉圆括号中的void。"><a href="#函数头重述了函数原型的信息：butler（）不带任何参数，且没有返回值。如果使用老式编译器，请去掉圆括号中的void。" class="headerlink" title="函数头重述了函数原型的信息：butler（）不带任何参数，且没有返回值。如果使用老式编译器，请去掉圆括号中的void。"></a>函数头重述了函数原型的信息：butler（）不带任何参数，且没有返回值。如果使用老式编译器，请去掉圆括号中的void。</h5><h5 id="何时执行butler（）函数取决于它在main（）中被调用的位置，而不是butler（）的定义在文件中的位置。"><a href="#何时执行butler（）函数取决于它在main（）中被调用的位置，而不是butler（）的定义在文件中的位置。" class="headerlink" title="何时执行butler（）函数取决于它在main（）中被调用的位置，而不是butler（）的定义在文件中的位置。"></a>何时执行butler（）函数取决于它在main（）中被调用的位置，而不是butler（）的定义在文件中的位置。</h5><h5 id="记住，无论main（）在程序文件处于什么位置，所有的C程序都从main（）开始执行。"><a href="#记住，无论main（）在程序文件处于什么位置，所有的C程序都从main（）开始执行。" class="headerlink" title="记住，无论main（）在程序文件处于什么位置，所有的C程序都从main（）开始执行。"></a>记住，无论main（）在程序文件处于什么位置，所有的C程序都从main（）开始执行。</h5><h5 id="但是，C的惯例是把main（）放在开头，因为它提供了程序的基本框架。"><a href="#但是，C的惯例是把main（）放在开头，因为它提供了程序的基本框架。" class="headerlink" title="但是，C的惯例是把main（）放在开头，因为它提供了程序的基本框架。"></a>但是，C的惯例是把main（）放在开头，因为它提供了程序的基本框架。</h5><h5 id="-9"><a href="#-9" class="headerlink" title=""></a></h5><h3 id="C标准建议，要为程序中用到的所有函数提供函数原型。标准include文件（包含文件）为标准库函数提供函数原型。"><a href="#C标准建议，要为程序中用到的所有函数提供函数原型。标准include文件（包含文件）为标准库函数提供函数原型。" class="headerlink" title="C标准建议，要为程序中用到的所有函数提供函数原型。标准include文件（包含文件）为标准库函数提供函数原型。"></a>C标准建议，要为程序中用到的所有函数提供函数原型。标准include文件（包含文件）为标准库函数提供函数原型。</h3><h5 id="-10"><a href="#-10" class="headerlink" title=""></a></h5><h4 id="2-2-5-调试程序"><a href="#2-2-5-调试程序" class="headerlink" title="2.2.5 调试程序"></a>2.2.5 调试程序</h4><h5 id="程序的错误通常叫做bug，找出并修正错误的过程叫做调试（debug）。"><a href="#程序的错误通常叫做bug，找出并修正错误的过程叫做调试（debug）。" class="headerlink" title="程序的错误通常叫做bug，找出并修正错误的过程叫做调试（debug）。"></a>程序的错误通常叫做bug，找出并修正错误的过程叫做调试（<em>debug</em>）。</h5><h5 id="2-2-5-1-语法错误"><a href="#2-2-5-1-语法错误" class="headerlink" title="2.2.5.1 语法错误"></a>2.2.5.1 语法错误</h5><h5 id="如果不遵循C语言的规则就会犯语法错误。"><a href="#如果不遵循C语言的规则就会犯语法错误。" class="headerlink" title="如果不遵循C语言的规则就会犯语法错误。"></a>如果不遵循C语言的规则就会犯语法错误。</h5><h5 id="要理解该句子存在语法错误，需要具备基本的英文语法知识。"><a href="#要理解该句子存在语法错误，需要具备基本的英文语法知识。" class="headerlink" title="要理解该句子存在语法错误，需要具备基本的英文语法知识。"></a>要理解该句子存在语法错误，需要具备基本的英文语法知识。</h5><h5 id="C语言的语法错误指的是，把有效的C符号放在错误的地方。"><a href="#C语言的语法错误指的是，把有效的C符号放在错误的地方。" class="headerlink" title="C语言的语法错误指的是，把有效的C符号放在错误的地方。"></a>C语言的语法错误指的是，把有效的C符号放在错误的地方。</h5><h5 id="-11"><a href="#-11" class="headerlink" title=""></a></h5><h5 id="如何发现程序的语法错误？"><a href="#如何发现程序的语法错误？" class="headerlink" title="如何发现程序的语法错误？"></a>如何发现程序的语法错误？</h5><h5 id="首先，在编译之前，浏览源代码看是否能发现一些明显的错误。"><a href="#首先，在编译之前，浏览源代码看是否能发现一些明显的错误。" class="headerlink" title="首先，在编译之前，浏览源代码看是否能发现一些明显的错误。"></a>首先，在编译之前，浏览源代码看是否能发现一些明显的错误。</h5><h5 id="接下来，查看编译器是否发现错误，检查程序的语法错误是它的工作之一。"><a href="#接下来，查看编译器是否发现错误，检查程序的语法错误是它的工作之一。" class="headerlink" title="接下来，查看编译器是否发现错误，检查程序的语法错误是它的工作之一。"></a>接下来，查看编译器是否发现错误，检查程序的语法错误是它的工作之一。</h5><h5 id="在编译程序时，编译器发现错误会报告错误信息，指出每一处错误的性质和具体位置。"><a href="#在编译程序时，编译器发现错误会报告错误信息，指出每一处错误的性质和具体位置。" class="headerlink" title="在编译程序时，编译器发现错误会报告错误信息，指出每一处错误的性质和具体位置。"></a>在编译程序时，编译器发现错误会报告错误信息，指出每一处错误的性质和具体位置。</h5><h5 id="如果编译器报错某行缺少分号，请检查上一行。"><a href="#如果编译器报错某行缺少分号，请检查上一行。" class="headerlink" title="如果编译器报错某行缺少分号，请检查上一行。"></a>如果编译器报错某行缺少分号，请检查上一行。</h5><h5 id="-12"><a href="#-12" class="headerlink" title=""></a></h5><h5 id="2-2-5-2-语义错误"><a href="#2-2-5-2-语义错误" class="headerlink" title="2.2.5.2 语义错误"></a>2.2.5.2 语义错误</h5><h5 id="语义错误时指意思上的错误。"><a href="#语义错误时指意思上的错误。" class="headerlink" title="语义错误时指意思上的错误。"></a>语义错误时指意思上的错误。</h5><h5 id="编译器无法检测语义错误，因为这类错误并未违反C语言的规则。"><a href="#编译器无法检测语义错误，因为这类错误并未违反C语言的规则。" class="headerlink" title="编译器无法检测语义错误，因为这类错误并未违反C语言的规则。"></a>编译器无法检测语义错误，因为这类错误并未违反C语言的规则。</h5><h5 id="编译器无法了解你的真正意图，所以你只能自己找出这些错误。"><a href="#编译器无法了解你的真正意图，所以你只能自己找出这些错误。" class="headerlink" title="编译器无法了解你的真正意图，所以你只能自己找出这些错误。"></a>编译器无法了解你的真正意图，所以你只能自己找出这些错误。</h5><h5 id="-13"><a href="#-13" class="headerlink" title=""></a></h5><h5 id="如何发现程序的语义错误？"><a href="#如何发现程序的语义错误？" class="headerlink" title="如何发现程序的语义错误？"></a>如何发现程序的语义错误？</h5><h5 id="1-对于简单的程序来说，把自己想象成计算机，尽量忠实代码来模拟，跟着程序的步骤一步一步地执行"><a href="#1-对于简单的程序来说，把自己想象成计算机，尽量忠实代码来模拟，跟着程序的步骤一步一步地执行" class="headerlink" title="1.对于简单的程序来说，把自己想象成计算机，尽量忠实代码来模拟，跟着程序的步骤一步一步地执行"></a>1.对于简单的程序来说，把自己想象成计算机，尽量忠实代码来模拟，跟着程序的步骤一步一步地执行</h5><h5 id="2-在程序中的关键点插入额外的printf（）语句，以监视制定变量值的变化"><a href="#2-在程序中的关键点插入额外的printf（）语句，以监视制定变量值的变化" class="headerlink" title="2.在程序中的关键点插入额外的printf（）语句，以监视制定变量值的变化"></a>2.在程序中的关键点插入额外的printf（）语句，以监视制定变量值的变化</h5><h5 id="通过查看值的变化可以了解程序的执行情况。"><a href="#通过查看值的变化可以了解程序的执行情况。" class="headerlink" title="通过查看值的变化可以了解程序的执行情况。"></a>通过查看值的变化可以了解程序的执行情况。</h5><h5 id="对程序的执行满意后，便可删除额外的printf（）语句，然后重新编译。"><a href="#对程序的执行满意后，便可删除额外的printf（）语句，然后重新编译。" class="headerlink" title="对程序的执行满意后，便可删除额外的printf（）语句，然后重新编译。"></a>对程序的执行满意后，便可删除额外的printf（）语句，然后重新编译。</h5><h5 id="3-使用调试器"><a href="#3-使用调试器" class="headerlink" title="3.使用调试器"></a>3.使用调试器</h5><h5 id="调试器（debugger）是一种程序，让你一步一步运行另一个程序，并检查该程序变量的值。"><a href="#调试器（debugger）是一种程序，让你一步一步运行另一个程序，并检查该程序变量的值。" class="headerlink" title="调试器（debugger）是一种程序，让你一步一步运行另一个程序，并检查该程序变量的值。"></a>调试器（<em>debugger</em>）是一种程序，让你一步一步运行另一个程序，并检查该程序变量的值。</h5><h5 id="-14"><a href="#-14" class="headerlink" title=""></a></h5><h4 id="2-2-6-关键字和保留标识符"><a href="#2-2-6-关键字和保留标识符" class="headerlink" title="2.2.6 关键字和保留标识符"></a>2.2.6 关键字和保留标识符</h4><h5 id="关键字是C语言的词汇。它们对C而言比较特殊，不能用它们作为标识符（如，变量名）。"><a href="#关键字是C语言的词汇。它们对C而言比较特殊，不能用它们作为标识符（如，变量名）。" class="headerlink" title="关键字是C语言的词汇。它们对C而言比较特殊，不能用它们作为标识符（如，变量名）。"></a>关键字是C语言的词汇。它们对C而言比较特殊，不能用它们作为标识符（如，变量名）。</h5><h5 id="如果使用关键字不当（如，用关键字作为变量名），编译器会将其视为语法错误。"><a href="#如果使用关键字不当（如，用关键字作为变量名），编译器会将其视为语法错误。" class="headerlink" title="如果使用关键字不当（如，用关键字作为变量名），编译器会将其视为语法错误。"></a>如果使用关键字不当（如，用关键字作为变量名），编译器会将其视为语法错误。</h5><h5 id="还有一些保留标识符（reserved-identifier），C语言已经指定了它们的用途或保留它们的使用权。"><a href="#还有一些保留标识符（reserved-identifier），C语言已经指定了它们的用途或保留它们的使用权。" class="headerlink" title="还有一些保留标识符（reserved identifier），C语言已经指定了它们的用途或保留它们的使用权。"></a>还有一些保留标识符（<em>reserved identifier</em>），C语言已经指定了它们的用途或保留它们的使用权。</h5><h5 id="如果你使用这些标识符来表示其他意思会导致一些问题。"><a href="#如果你使用这些标识符来表示其他意思会导致一些问题。" class="headerlink" title="如果你使用这些标识符来表示其他意思会导致一些问题。"></a>如果你使用这些标识符来表示其他意思会导致一些问题。</h5><h5 id="因此，尽管它们也是有效的名称，不会引起语法错误，也不能随便使用。"><a href="#因此，尽管它们也是有效的名称，不会引起语法错误，也不能随便使用。" class="headerlink" title="因此，尽管它们也是有效的名称，不会引起语法错误，也不能随便使用。"></a>因此，尽管它们也是有效的名称，不会引起语法错误，也不能随便使用。</h5><h5 id="保留标识符包括那些以下划线字符开头的标识符和标准库函数名，如printf（）。"><a href="#保留标识符包括那些以下划线字符开头的标识符和标准库函数名，如printf（）。" class="headerlink" title="保留标识符包括那些以下划线字符开头的标识符和标准库函数名，如printf（）。"></a>保留标识符包括那些以下划线字符开头的标识符和标准库函数名，如printf（）。</h5><h5 id="-15"><a href="#-15" class="headerlink" title=""></a></h5><h4 id="2-2-2-关键概念"><a href="#2-2-2-关键概念" class="headerlink" title="2.2.2 关键概念"></a>2.2.2 关键概念</h4><h5 id="程序员要具备抽象和逻辑的思维，并谨慎地处理细节问题（编译器会强迫你注意细节问题）。"><a href="#程序员要具备抽象和逻辑的思维，并谨慎地处理细节问题（编译器会强迫你注意细节问题）。" class="headerlink" title="程序员要具备抽象和逻辑的思维，并谨慎地处理细节问题（编译器会强迫你注意细节问题）。"></a>程序员要具备抽象和逻辑的思维，并谨慎地处理细节问题（编译器会强迫你注意细节问题）。</h5><h5 id="作为程序员的任务是，在符合C标准的编译器框架中，表达你希望程序应该如何完成任务的想法。"><a href="#作为程序员的任务是，在符合C标准的编译器框架中，表达你希望程序应该如何完成任务的想法。" class="headerlink" title="作为程序员的任务是，在符合C标准的编译器框架中，表达你希望程序应该如何完成任务的想法。"></a>作为程序员的任务是，在符合C标准的编译器框架中，表达你希望程序应该如何完成任务的想法。</h5><h2 id="本章小结"><a href="#本章小结" class="headerlink" title="本章小结"></a>本章小结</h2><h3 id="每个C程序必须包含一个main（）函数，这是C程序要调用的第1个函数。"><a href="#每个C程序必须包含一个main（）函数，这是C程序要调用的第1个函数。" class="headerlink" title="每个C程序必须包含一个main（）函数，这是C程序要调用的第1个函数。"></a>每个C程序必须包含一个main（）函数，这是C程序要调用的第1个函数。</h3><h3 id="简单的函数由函数头和后面的一对花括号组成，花括号中是由声明，语句组成的函数体。"><a href="#简单的函数由函数头和后面的一对花括号组成，花括号中是由声明，语句组成的函数体。" class="headerlink" title="简单的函数由函数头和后面的一对花括号组成，花括号中是由声明，语句组成的函数体。"></a>简单的函数由函数头和后面的一对花括号组成，花括号中是由声明，语句组成的函数体。</h3><h3 id="在C语言中，大部分语句都以分号结尾。"><a href="#在C语言中，大部分语句都以分号结尾。" class="headerlink" title="在C语言中，大部分语句都以分号结尾。"></a>在C语言中，大部分语句都以分号结尾。</h3><h3 id="printf（）函数用于输出想要表达的内容和变量的值。"><a href="#printf（）函数用于输出想要表达的内容和变量的值。" class="headerlink" title="printf（）函数用于输出想要表达的内容和变量的值。"></a>printf（）函数用于输出想要表达的内容和变量的值。</h3><h3 id="语句的语义是语句要表达的意思。"><a href="#语句的语义是语句要表达的意思。" class="headerlink" title="语句的语义是语句要表达的意思。"></a>语句的语义是语句要表达的意思。</h3><h3 id="编译器可以检测出语法错误，但是程序里的语义错误只有在编译完之后才能从程序的行为中表现出来。"><a href="#编译器可以检测出语法错误，但是程序里的语义错误只有在编译完之后才能从程序的行为中表现出来。" class="headerlink" title="编译器可以检测出语法错误，但是程序里的语义错误只有在编译完之后才能从程序的行为中表现出来。"></a>编译器可以检测出语法错误，但是程序里的语义错误只有在编译完之后才能从程序的行为中表现出来。</h3><h3 id="检查程序是否有语义错误要跟踪程序的状态，即程序每执行一步后所有变量的值。"><a href="#检查程序是否有语义错误要跟踪程序的状态，即程序每执行一步后所有变量的值。" class="headerlink" title="检查程序是否有语义错误要跟踪程序的状态，即程序每执行一步后所有变量的值。"></a>检查程序是否有语义错误要跟踪程序的状态，即程序每执行一步后所有变量的值。</h3><h3 id="关键字是C语言的词汇。"><a href="#关键字是C语言的词汇。" class="headerlink" title="关键字是C语言的词汇。"></a>关键字是C语言的词汇。</h3><h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><h3 id="程序员要认真仔细地编写程序，注意程序运行的每一个细节。"><a href="#程序员要认真仔细地编写程序，注意程序运行的每一个细节。" class="headerlink" title="程序员要认真仔细地编写程序，注意程序运行的每一个细节。"></a>程序员要认真仔细地编写程序，注意程序运行的每一个细节。</h3><h3 id="-16"><a href="#-16" class="headerlink" title=""></a></h3><h2 id="告示：第3章的读书笔记的编写议程已经暂时取消了。"><a href="#告示：第3章的读书笔记的编写议程已经暂时取消了。" class="headerlink" title="告示：第3章的读书笔记的编写议程已经暂时取消了。"></a>告示：第3章的读书笔记的编写议程已经暂时取消了。</h2>
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    
+<div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li class="post-title">
+            <span class="type">本文标题</span>：<span class="content">《C Primer Plus（第6版）中文版》读书笔记（第2章，2.25~3.17，2023）</span>
+        </li>
+        <li class="post-author">
+            <span class="type">本文作者</span>：<span class="content">ZenJiCh</span>
+        </li>
+        <li class="post-time">
+            <span class="type">创建时间</span>：<span class="content">2023-03-17 14:58:52</span>
+        </li>
+        <li class="post-link">
+            <span class="type">本文链接</span>：<span class="content">2023/03/17/《C Primer Plus（第6版）中文版》读书笔记（第2章，2.25~3.17,2023）/</span>
+        </li>
+        <li class="post-license">
+            <span class="type">版权声明</span>：<span class="content">本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！</span>
+        </li>
+    </ul>
+    <div class="copy-copyright-info flex-center tooltip" data-content="复制版权信息" data-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/C/">#C</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                               rel="next"
+                               href="/2023/02/25/%E3%80%8AC%20Primer%20Plus%EF%BC%88%E7%AC%AC6%E7%89%88%EF%BC%89%E4%B8%AD%E6%96%87%E7%89%88%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%EF%BC%88%E7%AC%AC1%E7%AB%A0%EF%BC%8C2.17~2.25%EF%BC%8C2023%EF%BC%89/"
+                            >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《C Primer Plus（第6版）中文版》读书笔记（第1章，2.17~2.25，2023）</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                                <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+                <div class="comment-container">
+                    
+<div class="comments-container">
+    <div id="comments-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments"></i>&nbsp;评论
+    </div>
+    
+        
+            
+
+    <div class="valine-container">
+        <script data-pjax src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+          function loadValine() {
+
+            const config = {
+              el: '#vcomments',
+              appId: 'avNR4TNcLOPPEAIlLl6ZwGJb-9Nh9j0Va',
+              appKey: 'SleATkcLof9VpvMFWASoRyfU',
+              meta: ['nick', 'mail', 'link'],
+              avatar: 'wavatar',
+              enableQQ: true,
+              placeholder: '若有疑问，请留言。（填写邮箱可在被回复时收到邮件提醒）',
+              lang: 'zh-CN'.toLowerCase()
+            }
+
+            if ('') {
+              config.serverURLs = ''
+            }
+
+            new Valine(config)
+
+            function getAuthor(language) {
+              switch (language) {
+                case 'en':
+                  return 'Author'
+                case 'zh-CN':
+                  return '博主'
+                default:
+                  return 'Master'
+              }
+            }
+
+            // Add "Author" identify
+            const getValineDomTimer = setInterval(() => {
+              const vcards = document.querySelectorAll('#vcomments .vcards .vcard')
+              if (vcards.length > 0) {
+                let author = 'ZenJiCh'
+
+                if (author) {
+                  for (let vcard of vcards) {
+                    const vnick_dom = vcard.querySelector('.vhead .vnick')
+                    const vnick = vnick_dom.innerHTML
+                    if (vnick === author) {
+                      vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                    }
+                  }
+                }
+                clearInterval(getValineDomTimer)
+              } else {
+                clearInterval(getValineDomTimer)
+              }
+            }, 2000)
+          }
+
+          if ('true' === 'true') {
+            const loadValineTimeout = setTimeout(() => {
+              loadValine()
+              clearTimeout(loadValineTimeout)
+            }, 1000)
+          } else {
+            window.addEventListener('DOMContentLoaded', loadValine)
+          }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+                </div>
+            
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2023</span> -
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">ZenJiCh</a>
+            
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/post-helper.js"></script>
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/anime.min.js"></script>
+        
+        
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
